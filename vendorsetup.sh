@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-export ALLOW_MISSING_DEPENDENCIES=true
+
  
 
 add_lunch_combo twrp_fogo-eng
