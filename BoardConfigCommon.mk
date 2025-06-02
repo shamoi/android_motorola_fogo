@@ -25,9 +25,8 @@
 
 # Recovery
 TARGET_OTA_ASSERT_DEVICE := fogo
-
-# TWRP specific build flags
-# TW_FRAMERATE := 120
+TWRP specific build flags
+TW_FRAMERATE := 120
 
 
 
