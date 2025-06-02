@@ -11,7 +11,7 @@
 DEVICE_PATH := device/motorola/fogo
 
 # For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
+#ALLOW_MISSING_DEPENDENCIES := true
 
 
 # A/B
@@ -54,7 +54,7 @@ TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_DENSITY := 280
 
 #Workaround for error copying vendor files to recovery ramdisk
-#TARGET_COPY_OUT_VENDOR := vendor
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 3
