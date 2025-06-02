@@ -34,9 +34,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 QCOM_BOARD_PLATFORMS += $(PRODUCT_PLATFORM)
 TARGET_BOARD_PLATFORM := $(PRODUCT_PLATFORM)
 TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_BOARD_PLATFORM)
-
-BUILD_BROKEN_DUP_RULES := true
-
 RELAX_USES_LIBRARY_CHECK := true
 
 # A/B support
@@ -53,16 +50,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # more partitions to this list for the bootloader and radio.
 AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor_dlkm dtbo vbmeta super init_boot system_dlkm
 
-# A/B related packages
-PRODUCT_PACKAGES += update_engine \
-    update_engine_client \
-    update_verifier \
-    android.hardware.boot@1.2-impl-qti \
-    android.hardware.boot@1.2-impl-qti.recovery \
-    android.hardware.boot@1.2-service
 
-PRODUCT_PACKAGES += \
-  update_engine_sideload
+
+
 
 # f2fs utilities
 PRODUCT_PACKAGES += \
@@ -103,9 +93,6 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
 
 #namespace definition for librecovery_updater
 #differentiate legacy 'sg' or 'bsg' framework
@@ -113,11 +100,6 @@ SOONG_CONFIG_NAMESPACES += ufsbsg
 
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
-
-# OEM otacerts
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(DEVICE_PATH)/security/otacert
-
 
 # System AVB
 BOARD_AVB_VBMETA_SYSTEM := system
