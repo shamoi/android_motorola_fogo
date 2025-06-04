@@ -6,11 +6,8 @@
 #
 #
 
-
 # Inherit the proprietary files
 include vendor/motorola/fogo/BoardConfigVendor.mk
-
-$(call inherit-product, device/android/common/device.mk)
 
 # Inherit from motorola sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
@@ -19,17 +16,16 @@ include device/motorola/sm6375-common/BoardConfigCommon.mk
 include $(DEVICE_PATH)/BoardConfigCommon.mk
 
 # Export
-
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
-export TW_HAS_NO_RECOVERY_PARTITION=true
+
 
 # SDK
 BOARD_SYSTEMSDK_VERSIONS := 34
 
 
-DEVICE_PATH := device/motorola/fogo
+DEVICE_PATH := "device/motorola/fogo"
 
 BOARD_STORE_RAMDISK_IN_BOOT := true
 
@@ -127,6 +123,7 @@ PRODUCT_PACKAGES += \
 
 
 # TWRP Configuration
+TW_HAS_NO_RECOVERY_PARTITION=true
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
