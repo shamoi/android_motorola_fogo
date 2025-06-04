@@ -6,6 +6,10 @@
 #
 # Inherit from common
 
+# Inherit from motorola sm6375-common
+include device/motorola/sm6375-common/BoardConfigCommon.mk
+
+
 include $(DEVICE_PATH)/BoardConfigCommon.mk
 
 # SDK
