@@ -6,6 +6,9 @@
 #
 #
 
+
+# Inherit the proprietary files
+include vendor/motorola/fogo/BoardConfigVendor.mk
 $(call inherit-product, device/android/common/device.mk)
 
 # Inherit from motorola sm6375-common
@@ -27,6 +30,7 @@ BOARD_SYSTEMSDK_VERSIONS := 34
 
 DEVICE_PATH := device/motorola/fogo
 
+BOARD_STORE_RAMDISK_IN_BOOT := true
 
 # A/B
 AB_OTA_UPDATER := true
