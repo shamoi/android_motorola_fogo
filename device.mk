@@ -5,6 +5,28 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# A/B
+TARGET_IS_VAB := true
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1612
+TARGET_SCREEN_WIDTH := 720
+
+# Screen
+TARGET_SCREEN_DENSITY := 280
+
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := 280dpi
+PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
+
+# API levels
+PRODUCT_SHIPPING_API_LEVEL := 34
+
+# Inherit from motorola sm7325-common
+$(call inherit-product, device/motorola/sm7325-common/common.mk)
+
+
 LOCAL_PATH := device/motorola/fogo
 
 # A/B
