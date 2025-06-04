@@ -8,6 +8,9 @@
 
 include $(DEVICE_PATH)/BoardConfigCommon.mk
 
+# SDK
+BOARD_SYSTEMSDK_VERSIONS := 34
+
 
 DEVICE_PATH := device/motorola/fogo
 
