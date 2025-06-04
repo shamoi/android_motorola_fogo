@@ -5,7 +5,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 #
-  
+
+$(call inherit-product, device/android/common/device.mk)
+
 # Inherit from motorola sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
 
