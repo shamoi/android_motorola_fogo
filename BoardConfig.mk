@@ -4,13 +4,23 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# Inherit from common
-
+#
+  
 # Inherit from motorola sm6375-common
 include device/motorola/sm6375-common/BoardConfigCommon.mk
 
-
+# Inherit from common
 include $(DEVICE_PATH)/BoardConfigCommon.mk
+
+# Export
+
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export TW_HAS_NO_RECOVERY_PARTITION=true
+export add_lunch_combo='twrp_fogo-user'
+export add_lunch_combo='twrp_fogo-userdebug'
+export add_lunch_combo='twrp_fogo-eng'   
 
 # SDK
 BOARD_SYSTEMSDK_VERSIONS := 34
