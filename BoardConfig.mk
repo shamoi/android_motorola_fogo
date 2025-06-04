@@ -40,7 +40,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 := 
+TARGET_CPU_ABI2 := common
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
 TARGET_2ND_ARCH := arm
@@ -58,9 +58,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_SCREEN_HEIGHT := 1612
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_DENSITY := 280
-
-#Workaround for error copying vendor files to recovery ramdisk
-TARGET_COPY_OUT_VENDOR := vendor
 
 
 # Rules
@@ -118,10 +115,16 @@ BOARD_USES_QCOM_FBE_DECRYPTION := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/motorola/fogo/recovery.fstab
+
+
 
 # Qcom
-BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := true# qcom decryption
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
@@ -137,35 +140,3 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_CRYPTO := true
-TW_NO_EXFAT_FUSE := true
-TW_INCLUDE_RESETPROP := true
-#TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-#TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental"
-#TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
-#RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory.token@1.0.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdmabufheap.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libhidlmemory.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libdebuggerd_client.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-#TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
-#TW_LOAD_VENDOR_DLKM_MODULES := "qpnp_adaptive_charge.ko mmi_annotate.ko mmi_info.ko mmi_sys_temp.ko mmi_charger.ko moto_f_usbnet.ko sensors_class.ko touchscreen_mmi.ko stmicro_mmi.ko goodix_brl_mmi.ko qpnp-pbs.ko qcom-hv-haptics.ko utags.ko"
-#TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
-
-# TWRP Debug Flags
-#TWRP_EVENT_LOGGING := true
-#TARGET_USES_LOGD := true
-#TWRP_INCLUDE_LOGCAT := true
-#TARGET_RECOVERY_DEVICE_MODULES += debuggerd
-#RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
-#TARGET_RECOVERY_DEVICE_MODULES += strace
-#RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
-#TARGET_RECOVERY_DEVICE_MODULES += twrpdec
-#RECOVERY_BINARY_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/twrpdec
-
