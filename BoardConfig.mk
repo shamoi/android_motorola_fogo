@@ -9,6 +9,7 @@
 
 # Inherit the proprietary files
 include vendor/motorola/fogo/BoardConfigVendor.mk
+
 $(call inherit-product, device/android/common/device.mk)
 
 # Inherit from motorola sm6375-common
