@@ -8,4 +8,6 @@
 
  
 
+add_lunch_combo twrp_fogo-user
+add_lunch_combo twrp_fogo-userdebug
 add_lunch_combo twrp_fogo-eng
