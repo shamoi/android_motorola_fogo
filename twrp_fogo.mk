@@ -17,7 +17,6 @@ $(call inherit-product, device/motorola/fogo/device.mk)
 
 $(call inherit-product, device/android/common/device.mk)
 
-ENABLE_VIRTUAL_AB := true
 
 PRODUCT_DEVICE := fogo
 PRODUCT_NAME := twrp_fogo
