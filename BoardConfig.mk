@@ -79,6 +79,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := kernel
 TARGET_KERNEL_CONFIG := fogo_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/fogo
+KERNEL_PAGE_SIZE := 4096
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
