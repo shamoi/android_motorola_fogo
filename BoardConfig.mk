@@ -5,7 +5,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 # Inherit from common
--include $(DEVICE_PATH)/BoardConfigCommon.mk
+
+include $(DEVICE_PATH)/BoardConfigCommon.mk
 
 
 DEVICE_PATH := device/motorola/fogo
