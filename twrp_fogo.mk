@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2025 The Android Open Source Project
 # Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
@@ -30,6 +31,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="fogo_g-user 11 U1UFNS34.41-98-3-13 fdb830 release-keys"
 
 BUILD_FINGERPRINT := motorola/fogo_g/fogo:11/U1UFNS34.41-98-3-13/fdb830:user/release-keys
+DeviceProduct=fogo_g
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)/twrp
 
 
