@@ -16,22 +16,10 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from fogo device
 $(call inherit-product, device/motorola/fogo/device.mk)
 
-$(call inherit-product, device/android/common/device.mk)
-
 
 PRODUCT_DEVICE := fogo
 PRODUCT_NAME := twrp_fogo
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g 5G - 2024
 PRODUCT_MANUFACTURER := motorola
-
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="fogo_g-user 11 U1UFNS34.41-98-3-13 fdb830 release-keys"
-
-BUILD_FINGERPRINT := motorola/fogo_g/fogo:11/U1UFNS34.41-98-3-13/fdb830:user/release-keys
-DeviceProduct=fogo_g
-TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)/twrp
-
 
