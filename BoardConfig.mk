@@ -7,27 +7,25 @@
 #
 
 # Inherit the proprietary files
-include vendor/motorola/fogo/BoardConfigVendor.mk
+-include vendor/motorola/fogo/BoardConfigVendor.mk
 
 # Inherit from motorola sm6375-common
-include device/motorola/sm6375-common/BoardConfigCommon.mk
+-include device/motorola/sm6375-common/BoardConfigCommon.mk
 
 # Inherit from common
-include $(DEVICE_PATH)/BoardConfigCommon.mk
+-include $(DEVICE_PATH)/BoardConfigCommon.mk
 
 # Export
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_DUP_RULES=true
-export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
-
+export ALLOW_MISSING_DEPENDENCIES= true
+ 
+# For arm64 
+TARGET_ARCH := arm64
 
 # SDK
 BOARD_SYSTEMSDK_VERSIONS := 34
 
-
 DEVICE_PATH := "device/motorola/fogo"
 
-BOARD_STORE_RAMDISK_IN_BOOT := true
 
 # A/B
 AB_OTA_UPDATER := true
@@ -38,14 +36,11 @@ AB_OTA_PARTITIONS += \
     system \
     product
 
-BOARD_USES_RECOVERY_AS_BOOT := true
-
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 := common
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 
 TARGET_2ND_ARCH := arm
@@ -63,8 +58,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_SCREEN_HEIGHT := 1612
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_DENSITY := 280
-
-
 
 # Kernel
 BOARD_KERNEL_SIZE := 41873920 
@@ -115,6 +108,9 @@ BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 4
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
 
+# Recovery 
+TARGET_RECOVERY_UI_MARGIN_HEIGHT := 120
+RAMDISK_IN_BOOT := true
 
 # Qcom
 BOARD_USES_QCOM_HARDWARE := true# qcom decryption
@@ -124,7 +120,8 @@ PRODUCT_PACKAGES += \
 
 
 # TWRP Configuration
-TW_HAS_NO_RECOVERY_PARTITION=true
+TW_EXCLUDE_SUPERSU := true
+TW_HAS_NO_RECOVERY_PARTITION := true
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -134,5 +131,4 @@ TW_USE_TOOLBOX := true
 TW_DEFAULT_BRIGHTNESS := 250
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_CRYPTO := true
