@@ -11,5 +11,7 @@ $(call inherit-product, $(DEVICE_PATH)/device-common.mk)
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),fogo)
+
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
+
 endif
