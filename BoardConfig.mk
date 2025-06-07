@@ -9,8 +9,8 @@
 # Inherit the proprietary files
 -include vendor/motorola/fogo/BoardConfigVendor.mk
 
-# Inherit from motorola sm7375-common
--include device/motorola/sm7375-common/BoardConfigCommon.mk
+# Inherit from motorola sm6375-common
+-include device/motorola/sm6375-common/BoardConfigCommon.mk
 
 # Inherit from common
 -include $(DEVICE_PATH)/BoardConfigCommon.mk
