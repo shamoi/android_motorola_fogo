@@ -6,9 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_fogo.mk
+    $(LOCAL_DIR)/twrp_fogo_g.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_eqe-user \
-    twrp_eqe-userdebug \
     twrp_fogo-eng
